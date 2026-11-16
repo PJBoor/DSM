@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dsm-loto"
+version = "0.1.0"
+description = "Analyse statistique de tirages de loto et simulations de martingales (aucune prédiction de numéros gagnants)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.setuptools]
+packages = ["dsm"]

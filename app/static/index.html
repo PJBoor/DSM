@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Holistic Approach — Tableau de bord</title>
+  <link rel="stylesheet" href="/ui/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Holistic Approach <span class="badge">API v1.0</span></div>
+    <nav id="nav" class="nav hidden">
+      <button data-tab="overview" class="tab active">Vue d'ensemble</button>
+      <button data-tab="market" class="tab">Veille M1</button>
+      <button data-tab="strategy" class="tab">Stratégie M5/M6</button>
+      <button data-tab="network" class="tab">Réseau M7</button>
+      <button data-tab="finance" class="tab">Budget M9</button>
+      <button data-tab="rai" class="tab">IA responsable</button>
+    </nav>
+    <div class="topbar-right">
+      <select id="lang" title="Langue / Language">
+        <option value="fr" selected>FR</option>
+        <option value="en">EN</option>
+      </select>
+      <span id="whoami" class="whoami"></span>
+      <button id="logout" class="btn ghost hidden">Déconnexion</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="login-view" class="login card">
+      <h1>Connexion</h1>
+      <p class="muted">Comptes seed : admin@holistic.local / Password123! (aussi strategist@, contributor@, reader@)</p>
+      <label>Email <input id="email" type="email" value="admin@holistic.local"></label>
+      <label>Mot de passe <input id="password" type="password" value="Password123!"></label>
+      <button id="login-btn" class="btn primary">Se connecter</button>
+      <p id="login-error" class="error"></p>
+    </section>
+
+    <section id="app-view" class="hidden">
+      <div id="tab-overview" class="tabpane"></div>
+      <div id="tab-market" class="tabpane hidden"></div>
+      <div id="tab-strategy" class="tabpane hidden"></div>
+      <div id="tab-network" class="tabpane hidden"></div>
+      <div id="tab-finance" class="tabpane hidden"></div>
+      <div id="tab-rai" class="tabpane hidden"></div>
+    </section>
+  </main>
+
+  <script src="/ui/app.js"></script>
+</body>
+</html>

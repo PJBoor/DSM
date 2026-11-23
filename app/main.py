@@ -1,4 +1,7 @@
+from pathlib import Path
+
 from fastapi import Depends, FastAPI
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
@@ -52,4 +55,9 @@ def ready(db: Session = Depends(get_db)):
 
 @app.get("/", tags=["socle"])
 def root():
-    return {"name": "Holistic Approach API", "docs": "/docs", "openapi": "/openapi.json"}
+    return {"name": "Holistic Approach API", "ui": "/ui/", "docs": "/docs", "openapi": "/openapi.json"}
+
+
+_static_dir = Path(__file__).parent / "static"
+if _static_dir.exists():
+    app.mount("/ui", StaticFiles(directory=_static_dir, html=True), name="ui")

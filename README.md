@@ -10,6 +10,7 @@ socle transverse d'**IA responsable**.
 - **Bilingue fr/en** : en-tête `Accept-Language` (défaut : `fr`).
 - **Sécurité** : JWT (access + refresh), rôles `admin`, `strategist`, `contributor`, `reader` ; les PII des décideurs sont masquées pour le rôle `reader`.
 - **Docs interactives** : `/docs` (Swagger) et `/redoc` ; spécification OpenAPI : `/openapi.json`.
+- **IHM tableau de bord** : `/ui/` — SPA statique zéro-dépendance servie par l'API (login JWT, onglets Vue d'ensemble / Veille M1 / Stratégie M5-M6 / Réseau M7 / Budget M9 / IA responsable, bascule FR/EN).
 
 ## Démarrage en une commande (Docker)
 
